@@ -4,9 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>أكواد برمجة الويب - HAMD</title>
-  <style>
-    body { font-family: 'Inter', Arial, sans-serif; direction: rtl; margin: 0; padding: 0; background: #f0f2f5; }
-    #main-content { padding: 20px; }
+    <style>
+    body { font-family: Arial, sans-serif; direction: rtl; margin: 0; padding: 0; background: #f0f2f5; }
+    #main-content { padding: 20px; display: none; }
+
+    /* شاشة 404 الوهمية */
+    #fake404 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f7f7f7;
+      color: #000000;
+      text-align: center;
+    }
+    #fake404 h1 { font-size: 80px; margin: 0; color: #e74c3c; }
+    #fake404 p { font-size: 20px; }
+
     .worksheet { background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .code-container { position: relative; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
     .copy-btn { position: absolute; left: 10px; top: 10px; padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
@@ -14,53 +29,18 @@
     pre { background: #f8f9fa; padding: 20px; margin: 0; overflow-x: auto; font-family: 'Courier New', monospace; }
     .code-header { background: #f8f9fa; padding: 10px; border-bottom: 1px solid #ddd; }
     .code-number { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; }
-    .warning { color: red; font-weight: bold; }
-
-    /* CSS for the fake 404 overlay */
-    #error-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 1);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      z-index: 1000;
-      transition: opacity 0.5s ease-in-out;
-    }
-    #error-overlay h1 {
-      font-size: 10rem;
-      margin: 0;
-      text-shadow: 0 0 10px #e74c3c;
-    }
-    #error-overlay p {
-      font-size: 2rem;
-      margin-top: 20px;
-    }
-    #error-overlay .message {
-      font-size: 1.2rem;
-      margin-top: 40px;
-      color: #ccc;
-    }
   </style>
 </head>
 <body>
-
-<!-- Fake 404 Overlay - Appears on top of all content initially -->
-<div id="error-overlay">
-
-  </div>
+<div id="fake404">
+  <h1>404</h1>
+  <p>الصفحة غير موجودة</p>
 </div>
 
 <div id="main-content">
-  <h1></h1>
-  <!--<p>اضغط على مفتاح "Alt" + رقم الكود (مثلاً: Alt + 1) لنسخ الكود مباشرةً. للأكواد من 10 إلى 13، استخدم Alt + F1 إلى Alt + F3 و Alt + F5.</p>
--->
+  <h1>HAMD</h1>
+  <p>اضغط على مفتاح "Alt" + رقم الكود (مثلاً: Alt + 1) لنسخ الكود مباشرةً. للأكواد من 10 إلى 13، استخدم Alt + F1 إلى Alt + F3 و Alt + F5.</p>
+
   <!-- الكود 1 -->
   <div class="worksheet" data-code-id="1">
     <div class="code-container">
@@ -68,33 +48,36 @@
         <span class="code-number">الكود 1</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;CS 142 Project 1&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Tahoma; font-size: 13px; }
-    table.main-table { width: 100%; border-collapse: collapse; }
-    thead tr { background: #687291; color: white; }
-    tbody tr:nth-child(odd) { background: #eeeff2; }
-    tbody tr:nth-child(even) { background: #dfe1e7; }
-    td, th { border-bottom: 1px solid white; padding: 8px; }
-    .total-row { display: none; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;table class="main-table"&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Quantity&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Keyboard&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;$40&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Mouse&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;$10&lt;/td&gt;&lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+      <h4>e shfit</h4>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char e, p[100];
+    int i, key, n;
+    
+    cout &lt;&lt; "Enter the Key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Length of Plaintext :";
+    cin &gt;&gt; n;
+    cout &lt;&lt; "Enter the Characters of Plaintext :";
+    
+    for(i = 0; i &lt; n; i++)
+        cin &gt;&gt; p[i];	
+    
+    for(i = 0; i &lt; n; i++)
+    {
+        e = (p[i] - 'A' + key) % 26 + 'A';
+        cout &lt;&lt; p[i] - 'A' &lt;&lt; " = " &lt;&lt; p[i] &lt;&lt; "  -------&gt; " 
+             &lt;&lt; e &lt;&lt; " = " &lt;&lt; (p[i] - 'A' + key) % 26 &lt;&lt; "\n";
+        // cout &lt;&lt; e;  
+    }
+  
+    return 0;
+}
+</code></pre>
+
     </div>
   </div>
 
@@ -105,19 +88,36 @@
         <span class="code-number">الكود 2</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;Get User Input&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;form action="message.php" method="post"&gt;
-    &lt;label for="username"&gt;Enter your name:&lt;/label&gt;
-    &lt;input type="text" id="username" name="username" required&gt;
-    &lt;input type="submit" value="Submit"&gt;
-  &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+      <h4>d shift</h4>
+     <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char d, p[100];
+    int i, key, n;
+    
+    cout &lt;&lt; "Enter the Key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Length of Ciphertext :";
+    cin &gt;&gt; n;
+    cout &lt;&lt; "Enter the Characters of Ciphertext :";
+	
+    for(i = 0; i &lt; n; i++)
+        cin &gt;&gt; p[i];
+    
+    for(i = 0; i &lt; n; i++)
+    {
+        d = (p[i] - 'A' - key + 26) % 26 + 'A';
+        cout &lt;&lt; p[i] - 'A' &lt;&lt; " = " &lt;&lt; p[i] &lt;&lt; "  -------&gt; " 
+             &lt;&lt; d &lt;&lt; " = " &lt;&lt; (p[i] - 'A' - key) % 26 &lt;&lt; "\n";
+        // cout &lt;&lt; d;  
+    }
+  
+    return 0;
+}
+</code></pre>
+
     </div>
   </div>
 
@@ -128,27 +128,37 @@
         <span class="code-number">الكود 3</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;hi&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h2&gt;answer the question 2 + 3 = ?&lt;/h2&gt;
-  &lt;form method='post' action='welcome.php'&gt;
-    &lt;label&gt;&lt;p&gt;Enter your answer&lt;/p&gt;&lt;input type='number' name='answer' required&gt;&lt;/label&gt;
-    &lt;br&gt;
-    &lt;label&gt;&lt;input type='submit' value='sent'&gt;&lt;/label&gt;
-  &lt;/form&gt;
+      <h4>e string </h4>
+      <pre><code>#include &lt;iostream&gt;
+using namespace std;
 
-  &lt;!--
-    هذا الكود يخلط بين HTML و PHP.
-    لا يمكن تشغيل كود PHP في ملف HTML عادي.
-    يحتاج تشغيله إلى خادم ويب يدعم PHP.
-  --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+int main()
+{
+    string st;
+    char e;
+    int i, key;
+    
+    cout &lt;&lt; "Enter the key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Plaintext :";
+    cin &gt;&gt; st;
+    
+    for(i = 0; i &lt; st.size(); i++)
+    {
+        e = (st[i] - 'A' + key) % 26 + 'A';
+        cout &lt;&lt; st[i] - 'A' &lt;&lt; " = " &lt;&lt; st[i]
+             &lt;&lt; "  -------&gt; " &lt;&lt; e
+             &lt;&lt; " = " &lt;&lt; (st[i] - 'A' + key) % 26 &lt;&lt; "\n";
+        // cout &lt;&lt; e;  
+    }
+ 
+    return 0;
+}
 </code></pre>
+      
+
+     
+
     </div>
   </div>
 
@@ -159,16 +169,34 @@
         <span class="code-number">الكود 4</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-&lt;h2&gt;JavaScript in Body&lt;/h2&gt;
-&lt;p id="demo"&gt;&lt;/p&gt;
-&lt;script&gt;
-document.getElementById("demo").innerHTML = "My First JavaScript";
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+      <h4>d string</h4>
+      <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    string st;
+    char d;
+    int i, key;
+    
+    cout &lt;&lt; "Enter the Key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Plaintext :";
+    cin &gt;&gt; st;
+    
+    for(i = 0; i &lt; st.size(); i++)
+    {
+        d = (st[i] - 'A' - key + 26) % 26 + 'A';
+        cout &lt;&lt; st[i] - 'A' &lt;&lt; " = " &lt;&lt; st[i]
+             &lt;&lt; "  -------&gt; " &lt;&lt; d
+             &lt;&lt; " = " &lt;&lt; (st[i] - 'A' - key + 26) % 26 &lt;&lt; "\n";
+        // cout &lt;&lt; d;  
+    }
+ 
+    return 0;
+}
+</code></pre>
+ 
     </div>
   </div>
 
@@ -179,24 +207,40 @@ document.getElementById("demo").innerHTML = "My First JavaScript";
         <span class="code-number">الكود 5</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html &gt; 
-&lt;html&gt; 
-&lt;head&gt; 
-&lt;title&gt;Lab&lt;/title&gt; 
-&lt;/head&gt; 
-&lt;body&gt; 
-&lt;h3&gt; javaScript&lt;/h3&gt; 
-&lt;hr /&gt; 
-&lt;script type="text/javascript"&gt; 
-&lt;!-- 
-document.write(navigator.appName); 
-document.write("&lt;p&gt;"); 
-document.write(navigator.appVersion); 
-document.write("&lt;/p&gt;"); 
-//--&gt; 
-&lt;/script&gt; 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+      <h4>e ASCI</h4>
+       <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    string s, ch;
+    int i, e, key;
+    
+    cout &lt;&lt; "Enter the Key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Plaintext : ";
+    cin &gt;&gt; s;
+        
+    for(i = 0; i &lt; s.size(); i++)
+    {
+        e = (int(s[i]) + key);
+        if (e &gt; 90) e = e - 26;
+        
+        cout &lt;&lt; s[i] &lt;&lt; " = " &lt;&lt; int(s[i]) 
+             &lt;&lt; "  -------&gt; " &lt;&lt; e 
+             &lt;&lt; " = " &lt;&lt; char(e) &lt;&lt; "\n";
+             
+        ch = ch + char(e);
+    }
+    
+    cout &lt;&lt; "\nEncrypted Message is : " &lt;&lt; ch &lt;&lt; "\n";
+    
+    return 0;
+}
+</code></pre>
+
+
+
     </div>
   </div>
 
@@ -207,319 +251,54 @@ document.write("&lt;/p&gt;");
         <span class="code-number">الكود 6</span>
       </div>
       <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Alert Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+      <h4>d ASCI</h4>
+      <pre><code>#include &lt;iostream&gt;
+using namespace std;
 
-  &lt;button onclick="myFunction()"&gt;Click here&lt;/button&gt;
-
-  &lt;script&gt;
-    function myFunction() {
-      alert("Hello\nHow are you?");
-    }
-  &lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 7 -->
-  <div class="worksheet" data-code-id="7">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 7</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Infinite Alert&lt;/title&gt;
-  &lt;script&gt; 
-    function showAlert() { 
-      alert("This is an infinite alert! You cannot escape."); 
-      showAlert();
-    } 
-  &lt;/script&gt; 
-&lt;/head&gt; 
-&lt;body onload="showAlert()"&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 8 -->
-  <div class="worksheet" data-code-id="8">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 8</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt; 
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Confirm Loop&lt;/title&gt;
-  &lt;script&gt; 
-    function showAlert() { 
-      let userWantsToContinue = confirm("This is an alert loop! Click 'OK' to continue or 'Cancel' to exit."); 
-      if (userWantsToContinue) {
-        showAlert(); // Recursively call itself if the user clicks "OK"
-      } else { 
-        alert("You have exited the loop!"); 
-      } 
-    } 
-  &lt;/script&gt; 
-&lt;/head&gt; 
-&lt;body onload="showAlert()"&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 9 -->
-  <div class="worksheet" data-code-id="9">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 9</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt; 
-&lt;head&gt; 
-  &lt;meta charset="UTF-8"&gt; 
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
-  &lt;title&gt;Infinite Popups&lt;/title&gt; 
-  &lt;script&gt; 
-    function openInfinitePopups() { 
-      while (true) { 
-        window.open("https://www.example.com", "_blank", "width=400,height=300"); 
-      } 
-    } 
-  &lt;/script&gt; 
-&lt;/head&gt; 
-
-&lt;body&gt; 
-  &lt;button onclick="openInfinitePopups()"&gt;Click here&lt;/button&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 10 -->
-  <div class="worksheet" data-code-id="f1">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 10</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt; 
-&lt;head&gt; 
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Infinite Popups&lt;/title&gt; 
-  &lt;script&gt; 
-    function openInfinitePopups() { 
-      setInterval(function() { 
-        window.open("https://www.example.com", "_blank", "width=400,height=300"); 
-      }, 500);
-    } 
-  &lt;/script&gt; 
-&lt;/head&gt; 
-&lt;body&gt; 
-  &lt;button onclick="openInfinitePopups()"&gt;Click here&lt;/button&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 11 -->
-  <div class="worksheet" data-code-id="f2">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 11</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt; 
-&lt;head&gt; 
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Infinite Popup&lt;/title&gt;
-&lt;/head&gt; 
-&lt;body&gt; 
-  &lt;h1&gt;Infinite Popup&lt;/h1&gt; 
-  &lt;button onclick="openPopup()"&gt;Click Here&lt;/button&gt; 
-  &lt;script&gt; 
-    function openPopup() { 
-      while (true) { 
-        window.open('about:blank', '_blank'); 
-      } 
-    } 
-  &lt;/script&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-
-  <!-- الكود 12 -->
-  <div class="worksheet" data-code-id="f3">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 12</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Privacy Attacks&lt;/title&gt;
-  &lt;style&gt;
-    a { 
-      visibility: hidden; 
-      position: absolute; 
-    } 
-    a:visited { 
-      color: red; 
-    } 
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;!-- تحذير: هذا الكود يمكنه الوصول إلى تاريخ تصفح المستخدم. هذا النوع من الهجمات يُعد انتهاكًا للخصوصية. --&gt;
-  &lt;script&gt;
-    function checkHistory() {
-      const links = [
-        { url: "http://pbskids.org/teletubbies/", message: "Oh, you like Teletubbies!" },
-        { url: "https://www.bankofamerica.com/index.jsp", message: "Our rates are better!" },
-        { url: "http://www.wellsfargo.com.phisher.com/", message: "Warning! You may have been phished!" }
-      ];
-
-      links.forEach(link => {
-        let a = document.createElement("a");
-        a.href = link.url;
-        document.body.appendChild(a);
-
-        if (getComputedStyle(a).color === "rgb(255, 0, 0)") {
-          document.write(`&lt;p&gt;${link.message}&lt;/p&gt;`);
-        }
+int main()
+{
+    string s, ch;
+    int i, d, key;
+    
+    cout &lt;&lt; "Enter the Key Number : ";
+    cin &gt;&gt; key;
+    cout &lt;&lt; "Enter the Ciphertext : ";
+    cin &gt;&gt; s;
+    
+    for(i = 0; i &lt; s.size(); i++)
+    {
+        d = (int(s[i]) - key);
+        if (d &lt; 65) d = d + 26;
         
-        document.body.removeChild(a);
-      });
+        cout &lt;&lt; s[i] &lt;&lt; " = " &lt;&lt; int(s[i])
+             &lt;&lt; "  -------&gt; " &lt;&lt; d
+             &lt;&lt; " = " &lt;&lt; char(d) &lt;&lt; "\n";
+             
+        ch = ch + char(d);
     }
+    
+    cout &lt;&lt; "\n The Plaintext is : " &lt;&lt; ch &lt;&lt; "\n";
+    
+    return 0;
+}
+</code></pre>
 
-    checkHistory();
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
     </div>
   </div>
 
-  <!-- الكود 13 -->
-  <div class="worksheet" data-code-id="f5">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 13</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-    input {
-      margin: 5px;
-      padding: 5px;
-    }
-    button {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    #output {
-      margin-top: 20px;
-      padding: 10px;
-      background: #f0f0f0;
-      border-radius: 5px;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h2&gt;Cookie Manager&lt;/h2&gt;
-  &lt;input type="text" id="cookieName" placeholder="Cookie Name" /&gt;
-  &lt;input type="text" id="cookieValue" placeholder="Cookie Value" /&gt;
-  &lt;br&gt;
-  &lt;button onclick="setMyCookie()"&gt;Set Cookie&lt;/button&gt;
-  &lt;button onclick="getMyCookie()"&gt;Get Cookie&lt;/button&gt;
-  &lt;button onclick="deleteMyCookie()"&gt;Delete Cookie&lt;/button&gt;
-  &lt;button onclick="showAllCookies()"&gt;Show All Cookies&lt;/button&gt;
-
-  &lt;div id="output"&gt;&lt;/div&gt;
-
-  &lt;script&gt;
-    function setCookie(name, value, days) {
-      let expires = "";
-      if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-      }
-      document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
-    }
-
-    function getCookie(name) {
-      const nameEQ = name + "=";
-      const ca = document.cookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i].trim();
-        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
-      }
-      return null;
-    }
-
-    function deleteCookie(name) {
-      document.cookie = name + "=; Max-Age=0; path=/";
-    }
-
-    function setMyCookie() {
-      const name = document.getElementById("cookieName").value;
-      const value = document.getElementById("cookieValue").value;
-      if (name && value) {
-        setCookie(name, value, 7);
-        document.getElementById("output").textContent = `Cookie "${name}" set to "${value}"`;
-      }
-    }
-
-    function getMyCookie() {
-      const name = document.getElementById("cookieName").value;
-      const value = getCookie(name);
-      document.getElementById("output").textContent = value
-        ? `Cookie "${name}" = "${value}"`
-        : `Cookie "${name}" not found`;
-    }
-
-    function deleteMyCookie() {
-      const name = document.getElementById("cookieName").value;
-      deleteCookie(name);
-      document.getElementById("output").textContent = `Cookie "${name}" deleted`;
-    }
-
-    function showAllCookies() {
-      document.getElementById("output").textContent = `All cookies: ${document.cookie}`;
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    </div>
-  </div>
-</div>
+  
 
 <script>
+let secret = "";
+document.addEventListener("keydown", function(e){
+  secret += e.key;
+  if(secret.includes("07")){
+    document.getElementById("main-content").style.display="block";
+    document.getElementById("fake404").style.display="none";
+  }
+  if(secret.length>5) secret=secret.slice(-2);
+});
+
 // The updated copyCode function to work with new code structure
 function copyCode(codeId) {
   const codeElement = document.querySelector(`.worksheet[data-code-id="${codeId}"] code`);
@@ -558,13 +337,9 @@ function copyCode(codeId) {
   }
 }
 
-// Track the key sequence for the 404 overlay
-let keySequence = '';
-const overlay = document.getElementById('error-overlay');
-
 // Add event listener for key presses
 document.addEventListener('keydown', function(event) {
-  const key = event.key;
+  const key = event.key.toLowerCase();
   let codeId = '';
 
   // Check for Alt + number (1 to 9)
@@ -574,24 +349,6 @@ document.addEventListener('keydown', function(event) {
   // Check for Alt + F keys (F1 to F3, F5)
   else if (event.altKey && (event.key === 'F1' || event.key === 'F2' || event.key === 'F3' || event.key === 'F5')) {
     codeId = event.key.toLowerCase();
-  }
-
-  // Logic for the 404 overlay removal (4 then 0 then 4)
-  if (keySequence === '' && key === '4') {
-    keySequence = '4';
-  } else if (keySequence === '4' && key === '0') {
-    keySequence = '40';
-  } else if (keySequence === '40' && key === '4') {
-    if (overlay) {
-      overlay.style.opacity = '0';
-      // Use a timeout to remove the element after the fade-out transition
-      setTimeout(() => {
-        overlay.style.display = 'none';
-      }, 500);
-    }
-    keySequence = ''; // Reset the sequence
-  } else {
-    keySequence = ''; // Reset on any other key press
   }
 
   if (codeId) {
