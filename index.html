@@ -42,44 +42,33 @@
   <p>اضغط على مفتاح "Alt" + رقم الكود (مثلاً: Alt + 1) لنسخ الكود مباشرةً. للأكواد من 10 إلى 13، استخدم Alt + F1 إلى Alt + F3 و Alt + F5.</p>
 
   <!-- الكود 1 -->
-  <div class="worksheet" data-code-id="1">
+    <div class="worksheet" data-code-id="1">
     <div class="code-container">
-      <div class="code-header">
+        <div class="code-header">
         <span class="code-number">الكود 1</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>e shfit</h4>
-    <pre><code>#include &lt;iostream&gt;
-using namespace std;
+        </div>
 
-int main()
-{
-    char e, p[100];
-    int i, key, n;
-    
-    cout &lt;&lt; "Enter the Key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Length of Plaintext :";
-    cin &gt;&gt; n;
-    cout &lt;&lt; "Enter the Characters of Plaintext :";
-    
-    for(i = 0; i &lt; n; i++)
-        cin &gt;&gt; p[i];	
-    
-    for(i = 0; i &lt; n; i++)
-    {
-        e = (p[i] - 'A' + key) % 26 + 'A';
-        cout &lt;&lt; p[i] - 'A' &lt;&lt; " = " &lt;&lt; p[i] &lt;&lt; "  -------&gt; " 
-             &lt;&lt; e &lt;&lt; " = " &lt;&lt; (p[i] - 'A' + key) % 26 &lt;&lt; "\n";
-        // cout &lt;&lt; e;  
-    }
-  
-    return 0;
-}
-</code></pre>
+        <button class="copy-btn">نسخ</button>
+        <h4>e shift (Python)</h4>
+
+        <pre><code>
+    text = input()
+    shift = int(input())
+
+    encrypted = ""
+
+    for c in text:
+        if c.isalpha():
+            encrypted += chr((ord(c.lower()) - 97 + shift) % 26 + 97)
+        else:
+            encrypted += c
+
+    print(encrypted)
+        </code></pre>
 
     </div>
-  </div>
+    </div>
+
 
   <!-- الكود 2 -->
   <div class="worksheet" data-code-id="2">
