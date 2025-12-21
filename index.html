@@ -69,212 +69,75 @@
     </div>
     </div>
 
+    <!-- الكود 2 -->
 
-  <!-- الكود 2 -->
-  <div class="worksheet" data-code-id="2">
+    <div class="worksheet" data-code-id="2">
     <div class="code-container">
-      <div class="code-header">
+        <div class="code-header">
         <span class="code-number">الكود 2</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>d shift</h4>
-     <pre><code>#include &lt;iostream&gt;
-using namespace std;
+        </div>
 
-int main()
-{
-    char d, p[100];
-    int i, key, n;
-    
-    cout &lt;&lt; "Enter the Key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Length of Ciphertext :";
-    cin &gt;&gt; n;
-    cout &lt;&lt; "Enter the Characters of Ciphertext :";
-	
-    for(i = 0; i &lt; n; i++)
-        cin &gt;&gt; p[i];
-    
-    for(i = 0; i &lt; n; i++)
-    {
-        d = (p[i] - 'A' - key + 26) % 26 + 'A';
-        cout &lt;&lt; p[i] - 'A' &lt;&lt; " = " &lt;&lt; p[i] &lt;&lt; "  -------&gt; " 
-             &lt;&lt; d &lt;&lt; " = " &lt;&lt; (p[i] - 'A' - key) % 26 &lt;&lt; "\n";
-        // cout &lt;&lt; d;  
-    }
-  
-    return 0;
-}
-</code></pre>
+        <button class="copy-btn">نسخ</button>
+        <h4>IP Checker (Python)</h4>
+
+        <pre><code>
+    import ipaddress
+
+    ip = input()
+    addr = ipaddress.ip_address(ip)
+
+    print("Private" if addr.is_private else "Public")
+        </code></pre>
 
     </div>
-  </div>
+    </div>
+
 
   <!-- الكود 3 -->
   <div class="worksheet" data-code-id="3">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 3</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>e string </h4>
-      <pre><code>#include &lt;iostream&gt;
-using namespace std;
+  <div class="code-container">
+    <div class="code-header">
+      <span class="code-number">الكود 3</span>
+    </div>
 
-int main()
-{
-    string st;
-    char e;
-    int i, key;
-    
-    cout &lt;&lt; "Enter the key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Plaintext :";
-    cin &gt;&gt; st;
-    
-    for(i = 0; i &lt; st.size(); i++)
-    {
-        e = (st[i] - 'A' + key) % 26 + 'A';
-        cout &lt;&lt; st[i] - 'A' &lt;&lt; " = " &lt;&lt; st[i]
-             &lt;&lt; "  -------&gt; " &lt;&lt; e
-             &lt;&lt; " = " &lt;&lt; (st[i] - 'A' + key) % 26 &lt;&lt; "\n";
-        // cout &lt;&lt; e;  
-    }
+    <button class="copy-btn">نسخ</button>
+    <h4>Most Frequent IP (Python)</h4>
+
+    <pre><code>
+from collections import Counter
+
+with open("log.txt") as f:
+    ips = f.read().split()
+
+print(Counter(ips).most_common(1))
+    </code></pre>
+
+  </div>
+</div>
+
+
+<!-- الكود 4 -->
+<div class="worksheet" data-code-id="4">
+  <div class="code-container">
+    <div class="code-header">
+      <span class="code-number">الكود 4</span>
+    </div>
+
+    <button class="copy-btn">نسخ</button>
+    <h4>OTP Generator (Python)</h4>
+
+    <pre><code>
+import random
+
+otp = random.randint(100000, 999999)
+print(otp)
+    </code></pre>
+
+  </div>
+</div>
+
+
  
-    return 0;
-}
-</code></pre>
-      
-
-     
-
-    </div>
-  </div>
-
-  <!-- الكود 4 -->
-  <div class="worksheet" data-code-id="4">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 4</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>d string</h4>
-      <pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    string st;
-    char d;
-    int i, key;
-    
-    cout &lt;&lt; "Enter the Key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Plaintext :";
-    cin &gt;&gt; st;
-    
-    for(i = 0; i &lt; st.size(); i++)
-    {
-        d = (st[i] - 'A' - key + 26) % 26 + 'A';
-        cout &lt;&lt; st[i] - 'A' &lt;&lt; " = " &lt;&lt; st[i]
-             &lt;&lt; "  -------&gt; " &lt;&lt; d
-             &lt;&lt; " = " &lt;&lt; (st[i] - 'A' - key + 26) % 26 &lt;&lt; "\n";
-        // cout &lt;&lt; d;  
-    }
- 
-    return 0;
-}
-</code></pre>
- 
-    </div>
-  </div>
-
-  <!-- الكود 5 -->
-  <div class="worksheet" data-code-id="5">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 5</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>e ASCI</h4>
-       <pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    string s, ch;
-    int i, e, key;
-    
-    cout &lt;&lt; "Enter the Key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Plaintext : ";
-    cin &gt;&gt; s;
-        
-    for(i = 0; i &lt; s.size(); i++)
-    {
-        e = (int(s[i]) + key);
-        if (e &gt; 90) e = e - 26;
-        
-        cout &lt;&lt; s[i] &lt;&lt; " = " &lt;&lt; int(s[i]) 
-             &lt;&lt; "  -------&gt; " &lt;&lt; e 
-             &lt;&lt; " = " &lt;&lt; char(e) &lt;&lt; "\n";
-             
-        ch = ch + char(e);
-    }
-    
-    cout &lt;&lt; "\nEncrypted Message is : " &lt;&lt; ch &lt;&lt; "\n";
-    
-    return 0;
-}
-</code></pre>
-
-
-
-    </div>
-  </div>
-
-  <!-- الكود 6 -->
-  <div class="worksheet" data-code-id="6">
-    <div class="code-container">
-      <div class="code-header">
-        <span class="code-number">الكود 6</span>
-      </div>
-      <button class="copy-btn">نسخ</button>
-      <h4>d ASCI</h4>
-      <pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    string s, ch;
-    int i, d, key;
-    
-    cout &lt;&lt; "Enter the Key Number : ";
-    cin &gt;&gt; key;
-    cout &lt;&lt; "Enter the Ciphertext : ";
-    cin &gt;&gt; s;
-    
-    for(i = 0; i &lt; s.size(); i++)
-    {
-        d = (int(s[i]) - key);
-        if (d &lt; 65) d = d + 26;
-        
-        cout &lt;&lt; s[i] &lt;&lt; " = " &lt;&lt; int(s[i])
-             &lt;&lt; "  -------&gt; " &lt;&lt; d
-             &lt;&lt; " = " &lt;&lt; char(d) &lt;&lt; "\n";
-             
-        ch = ch + char(d);
-    }
-    
-    cout &lt;&lt; "\n The Plaintext is : " &lt;&lt; ch &lt;&lt; "\n";
-    
-    return 0;
-}
-</code></pre>
-
-    </div>
-  </div>
-
   
 
 <script>
