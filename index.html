@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أكواد برمجة الويب - HAMD</title>
+  <title>أكواد Assembly x86_64 - HAMD</title>
     <style>
     body { font-family: Arial, sans-serif; direction: rtl; margin: 0; padding: 0; background: #f0f2f5; }
     #main-content { padding: 20px; display: none; }
@@ -24,9 +24,9 @@
 
     .worksheet { background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .code-container { position: relative; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
-    .copy-btn { position: absolute; left: 10px; top: 10px; padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s; }
+    .copy-btn { position: absolute; left: 10px; top: 10px; padding: 8px 15px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s; z-index: 10; }
     .copy-btn:hover { background: #45a049; }
-    pre { background: #f8f9fa; padding: 20px; margin: 0; overflow-x: auto; font-family: 'Courier New', monospace; }
+    pre { background: #f8f9fa; padding: 20px; margin: 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; }
     .code-header { background: #f8f9fa; padding: 10px; border-bottom: 1px solid #ddd; }
     .code-number { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; }
   </style>
@@ -38,107 +38,176 @@
 </div>
 
 <div id="main-content">
-  <h1>HAMD</h1>
-  <p>اضغط على مفتاح "Alt" + رقم الكود (مثلاً: Alt + 1) لنسخ الكود مباشرةً. للأكواد من 10 إلى 13، استخدم Alt + F1 إلى Alt + F3 و Alt + F5.</p>
+  <h1>🖥️ أكواد Assembly x86_64</h1>
+  <p>اضغط على مفتاح "Alt" + رقم الكود (Alt + 1 إلى Alt + 6) لنسخ الكود مباشرةً</p>
 
-  <!-- الكود 1 -->
-    <div class="worksheet" data-code-id="1">
+  <!-- الكود 1: الجمع -->
+  <div class="worksheet" data-code-id="1">
     <div class="code-container">
-        <div class="code-header">
+      <div class="code-header">
         <span class="code-number">الكود 1</span>
-        </div>
-
-        <button class="copy-btn">نسخ</button>
-        <h4>e shift (Python)</h4>
-
-        <pre><code>
-    text = input()
-    shift = int(input())
-
-    encrypted = ""
-
-    for c in text:
-        if c.isalpha():
-            encrypted += chr((ord(c.lower()) - 97 + shift) % 26 + 97)
-        else:
-            encrypted += c
-
-    print(encrypted)
-        </code></pre>
-
-    </div>
-    </div>
-
-    <!-- الكود 2 -->
-
-    <div class="worksheet" data-code-id="2">
-    <div class="code-container">
-        <div class="code-header">
-        <span class="code-number">الكود 2</span>
-        </div>
-
-        <button class="copy-btn">نسخ</button>
-        <h4>IP Checker (Python)</h4>
-
-        <pre><code>
-    import ipaddress
-
-    ip = input()
-    addr = ipaddress.ip_address(ip)
-
-    print("Private" if addr.is_private else "Public")
-        </code></pre>
-
-    </div>
-    </div>
-
-
-  <!-- الكود 3 -->
-  <div class="worksheet" data-code-id="3">
-  <div class="code-container">
-    <div class="code-header">
-      <span class="code-number">الكود 3</span>
-    </div>
-
-    <button class="copy-btn">نسخ</button>
-    <h4>Most Frequent IP (Python)</h4>
-
-    <pre><code>
-from collections import Counter
-
-with open("log.txt") as f:
-    ips = f.read().split()
-
-print(Counter(ips).most_common(1))
-    </code></pre>
-
-  </div>
-</div>
-
-
-<!-- الكود 4 -->
-<div class="worksheet" data-code-id="4">
-  <div class="code-container">
-    <div class="code-header">
-      <span class="code-number">الكود 4</span>
-    </div>
-
-    <button class="copy-btn">نسخ</button>
-    <h4>OTP Generator (Python)</h4>
-
-    <pre><code>
-import random
-
-otp = random.randint(100000, 999999)
-print(otp)
-    </code></pre>
-
-  </div>
-</div>
-
-
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15 + 4 = 19</h4>
+      <pre><code>section .data 
+    msg db '15 + 4 = 19', 10 
+    len equ $ - msg 
  
-  
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
+
+  <!-- الكود 2: الطرح -->
+  <div class="worksheet" data-code-id="2">
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-number">الكود 2</span>
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15 - 4 = 11</h4>
+      <pre><code>section .data 
+    msg db '15 - 4 = 11', 10 
+    len equ $ - msg 
+ 
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
+
+  <!-- الكود 3: الضرب -->
+  <div class="worksheet" data-code-id="3">
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-number">الكود 3</span>
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15 × 4 = 60</h4>
+      <pre><code>section .data 
+    msg db '15 * 4 = 60', 10 
+    len equ $ - msg 
+ 
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
+
+  <!-- الكود 4: القسمة -->
+  <div class="worksheet" data-code-id="4">
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-number">الكود 4</span>
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15 ÷ 4 = 3</h4>
+      <pre><code>section .data 
+    msg db '15 / 4 = 3', 10 
+    len equ $ - msg 
+ 
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
+
+  <!-- الكود 5: الباقي -->
+  <div class="worksheet" data-code-id="5">
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-number">الكود 5</span>
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15 % 4 = 3</h4>
+      <pre><code>section .data 
+    msg db '15 % 4 = 3', 10 
+    len equ $ - msg 
+ 
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
+
+  <!-- الكود 6: القوة -->
+  <div class="worksheet" data-code-id="6">
+    <div class="code-container">
+      <div class="code-header">
+        <span class="code-number">الكود 6</span>
+      </div>
+      <button class="copy-btn">نسخ</button>
+      <h4>15² = 225</h4>
+      <pre><code>section .data 
+    msg db '15 ^ 2 = 225', 10 
+    len equ $ - msg 
+ 
+section .text 
+    global _start 
+ 
+_start: 
+    mov rax, 1 
+    mov rdi, 1 
+    mov rsi, msg 
+    mov rdx, len 
+    syscall 
+ 
+    mov rax, 60 
+    mov rdi, 0 
+    syscall</code></pre>
+    </div>
+  </div>
 
 <script>
 let secret = "";
@@ -151,26 +220,21 @@ document.addEventListener("keydown", function(e){
   if(secret.length>5) secret=secret.slice(-2);
 });
 
-// The updated copyCode function to work with new code structure
 function copyCode(codeId) {
   const codeElement = document.querySelector(`.worksheet[data-code-id="${codeId}"] code`);
   if (codeElement) {
     const code = codeElement.innerText;
 
-    // Create a temporary textarea element to hold the code
     const tempTextarea = document.createElement('textarea');
     tempTextarea.value = code;
     document.body.appendChild(tempTextarea);
 
-    // Select the text in the temporary textarea
     tempTextarea.select();
-    tempTextarea.setSelectionRange(0, 99999); // For mobile devices
+    tempTextarea.setSelectionRange(0, 99999);
 
-    // Execute the copy command
     try {
       document.execCommand('copy');
-
-      // Show temporary confirmation message
+      
       const copyBtn = document.querySelector(`.worksheet[data-code-id="${codeId}"] .copy-btn`);
       if (copyBtn) {
         copyBtn.style.background = '#2ecc71';
@@ -183,24 +247,17 @@ function copyCode(codeId) {
     } catch (err) {
       console.error('Failed to copy text: ', err);
     } finally {
-      // Remove the temporary textarea
       document.body.removeChild(tempTextarea);
     }
   }
 }
 
-// Add event listener for key presses
 document.addEventListener('keydown', function(event) {
   const key = event.key.toLowerCase();
   let codeId = '';
 
-  // Check for Alt + number (1 to 9)
-  if (event.altKey && key >= '1' && key <= '9') {
+  if (event.altKey && key >= '1' && key <= '6') {
     codeId = key;
-  }
-  // Check for Alt + F keys (F1 to F3, F5)
-  else if (event.altKey && (event.key === 'F1' || event.key === 'F2' || event.key === 'F3' || event.key === 'F5')) {
-    codeId = event.key.toLowerCase();
   }
 
   if (codeId) {
@@ -209,7 +266,6 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-// Update copy buttons to call the new function
 const copyButtons = document.querySelectorAll('.copy-btn');
 copyButtons.forEach(button => {
   button.onclick = function() {
